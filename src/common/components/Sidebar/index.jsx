@@ -28,6 +28,12 @@ class SidebarComponent extends Component<Props> {
 				icon: 'bookmark'
 			},
 			{
+				path: '/subcategories',
+				exact: true,
+				name: 'SubCategories',
+				icon: 'bookmark'
+			},
+			{
 				path: '/projects',
 				exact: true,
 				name: 'Profil',
