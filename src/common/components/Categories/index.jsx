@@ -6,18 +6,26 @@ export class Categories extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			categories: []
-			// category = {
-			//     id: null,
-			//     description: '',
-			//     iconUrl: '',
-			//     isActive: true
-			// }
+			categories:
+			[
+				{
+					id: 1,
+					description: '',
+					iconUrl: '',
+					isActive: true
+				},
+				{
+					id: 2,
+					description: '',
+					iconUrl: '',
+					isActive: true
+				}
+			]
 		}
 		this.handleClick = this.handleClick.bind(this)
 	}
 
-	getCategories () {
+	/* getCategories () {
 		var promise = new Promise((resolve, reject) => {
 			// resolve(GET_CATEGORIES)
 			resolve(null)
@@ -38,7 +46,7 @@ export class Categories extends Component {
 					})
 				})
 			})
-	}
+	} */
 
 	handleClick (id) {
 		let oldCategories = this.state.categories
@@ -55,7 +63,13 @@ export class Categories extends Component {
 
 	render () {
 		return (
-			<Card.Group>
+			<div>Du beau text de test
+			{
+				console.log('yolo man')
+			}
+			</div>
+
+			/* <Card.Group>
 				{
 					this.state.categories.map(category => {
 						return (
@@ -78,7 +92,7 @@ export class Categories extends Component {
 						)
 					})
 				}
-			</Card.Group>
+			</Card.Group> */
 		)
 	}
 }
