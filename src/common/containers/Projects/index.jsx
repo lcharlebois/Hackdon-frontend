@@ -86,6 +86,7 @@ class Links extends Component<Props> {
 						</Grid>
 						<br/>
 						<Button positive floated='right' as='a' href='/swipes'>Ajouter</Button>
+						<Button primary floated='right' as='a'>Modifier</Button>
 					</div>
 				)}
 			</div>
