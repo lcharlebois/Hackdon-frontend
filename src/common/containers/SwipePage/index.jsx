@@ -32,18 +32,14 @@ export default class SwipePage extends React.Component {
 				<Header as="h3">Choisissez des projets qui vous tienne à coeur</Header>
 				<Divider />
 				<Grid columns={3} padded='horizontally'>
-					<Grid.Column verticalAlign='middle' textAlign='center'>
-						<Button icon onClick={this.onLeftSwipe}>
-							<Icon name='angle left' size='massive' />
-						</Button>
+					<Grid.Column verticalAlign='middle' textAlign='center' onClick={this.onLeftSwipe}>
+						<Icon name='angle left' size='massive' />
 					</Grid.Column>
 					<Grid.Column>
 						<SwipeCard {...projects[this.state.swipeIndex]} />
 					</Grid.Column>
 					<Grid.Column verticalAlign='middle' textAlign='center'>
-						<Button icon onClick={this.onRightSwipe}>
-							<Icon name='angle right' size='massive' />
-						</Button>
+						<Icon name='angle right' size='massive' onClick={this.onRightSwipe}/>
 					</Grid.Column>
 				</Grid>
 			</div>
