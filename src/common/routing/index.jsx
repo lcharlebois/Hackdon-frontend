@@ -7,6 +7,7 @@ import _ from 'lodash'
 import Dashboard from 'containers/Dashboard'
 import SwipePage from 'containers/SwipePage'
 import Links from 'containers/Links'
+import Projects from 'containers/Projects'
 import Login from 'containers/Login'
 
 function asyncComponentCreator (url) {
@@ -61,6 +62,12 @@ function routingFnCreator (useFor) {
 			exact: true,
 			component: Links,
 			name: 'Links'
+		},
+		{
+			path: '/projects',
+			exact: true,
+			component: Projects,
+			name: 'Projets'
 		},
 		{
 			path: '/login',
