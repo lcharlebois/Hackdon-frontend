@@ -7,6 +7,7 @@ import _ from 'lodash'
 import Dashboard from 'containers/Dashboard'
 import Links from 'containers/Links'
 import Login from 'containers/Login'
+import Categories from '../components/Categories'
 
 function asyncComponentCreator (url) {
 	return asyncComponent({
@@ -65,6 +66,12 @@ function routingFnCreator (useFor) {
 			path: '/login',
 			exact: true,
 			component: Login,
+			icon: 'bookmark'
+		},
+		{
+			path: '/categories',
+			exact: true,
+			component: Categories,
 			icon: 'bookmark'
 		},
 		{
