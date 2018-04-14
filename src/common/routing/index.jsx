@@ -5,6 +5,7 @@ import {asyncComponent} from 'react-async-component'
 import {Loader, Dimmer, Header, Icon} from 'semantic-ui-react'
 import _ from 'lodash'
 import Dashboard from 'containers/Dashboard'
+import Swipes from 'containers/Swipes'
 import Links from 'containers/Links'
 import Login from 'containers/Login'
 
@@ -66,6 +67,11 @@ function routingFnCreator (useFor) {
 			exact: true,
 			component: Login,
 			icon: 'bookmark'
+		},
+			path: '/swipes',
+			exact: true,
+			component: Swipes,
+			name: 'Swipes'
 		},
 		{
 			component: asyncComponentCreator('NotFound'),
