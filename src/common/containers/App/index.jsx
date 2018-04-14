@@ -89,7 +89,7 @@ class App extends Component<Props> {
 						<div className="main-layout">
 							<main className="main-content">
 								<Container className="main-container">{children}</Container>
-								<Footer />
+								{/* <Footer /> */}
 							</main>
 						</div>
 					</SidebarSemanticPusherStyled>

@@ -6,6 +6,7 @@ import {Loader, Dimmer, Header, Icon} from 'semantic-ui-react'
 import _ from 'lodash'
 import Dashboard from 'containers/Dashboard'
 import Links from 'containers/Links'
+import Login from 'containers/Login'
 
 function asyncComponentCreator (url) {
 	return asyncComponent({
@@ -59,6 +60,12 @@ function routingFnCreator (useFor) {
 			exact: true,
 			component: Links,
 			name: 'Links'
+		},
+		{
+			path: '/login',
+			exact: true,
+			component: Login,
+			icon: 'bookmark'
 		},
 		{
 			component: asyncComponentCreator('NotFound'),

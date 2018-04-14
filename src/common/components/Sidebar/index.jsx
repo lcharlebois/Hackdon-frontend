@@ -26,11 +26,6 @@ class SidebarComponent extends Component<Props> {
 				exact: true,
 				name: 'Links',
 				icon: 'bookmark'
-			},
-			{
-				path: 'https://github.com/Metnew/suicrux',
-				name: 'Github',
-				icon: 'github'
 			}
 		]
 
