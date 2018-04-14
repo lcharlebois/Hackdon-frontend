@@ -6,10 +6,10 @@ import {Loader, Dimmer, Header, Icon} from 'semantic-ui-react'
 import _ from 'lodash'
 import Dashboard from 'containers/Dashboard'
 import SwipePage from 'containers/SwipePage'
-import Links from 'containers/Links'
 import Projects from 'containers/Projects'
 import Login from 'containers/Login'
-import Categories from '../components/Categories'
+import CategoriesContainer from '../containers/Categories'
+import SubCategoriesContainer from '../containers/SubCategories'
 
 function asyncComponentCreator (url) {
 	return asyncComponent({
@@ -59,10 +59,16 @@ function routingFnCreator (useFor) {
 			name: 'Dashboard'
 		},
 		{
-			path: '/links',
+			path: '/categories',
 			exact: true,
-			component: Links,
-			name: 'Links'
+			component: CategoriesContainer,
+			name: 'Categories'
+		},
+		{
+			path: '/subcategories',
+			exact: true,
+			component: SubCategoriesContainer,
+			name: 'SubCategories'
 		},
 		{
 			path: '/projects',
@@ -74,12 +80,6 @@ function routingFnCreator (useFor) {
 			path: '/login',
 			exact: true,
 			component: Login,
-			icon: 'bookmark'
-		},
-		{
-			path: '/categories',
-			exact: true,
-			component: Categories,
 			icon: 'bookmark'
 		},
 		{
