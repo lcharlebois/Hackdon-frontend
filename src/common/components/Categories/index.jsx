@@ -2,27 +2,56 @@ import React, {Component} from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
 // import GET_CATEGORIES
 
-export class Categories extends Component {
+export default class Categories extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
 			categories:
 			[
 				{
+					id: 0,
+					title: 'Cancer',
+					description: 'description',
+					iconUrl: 'http://via.placeholder.com/50x50',
+					isActive: true
+				},
+				{
 					id: 1,
-					description: '',
-					iconUrl: '',
+					title: 'Cancer',
+					description: 'description',
+					iconUrl: 'http://via.placeholder.com/50x50',
 					isActive: true
 				},
 				{
 					id: 2,
-					description: '',
-					iconUrl: '',
+					title: 'Cancer2',
+					description: 'description',
+					iconUrl: 'http://via.placeholder.com/50x50',
+					isActive: false
+				},
+				{
+					id: 3,
+					title: 'Cancer',
+					description: 'description',
+					iconUrl: 'http://via.placeholder.com/50x50',
 					isActive: true
+				},
+				{
+					id: 4,
+					title: 'Cancer2',
+					description: 'description',
+					iconUrl: 'http://via.placeholder.com/50x50',
+					isActive: false
+				},
+				{
+					id: 5,
+					title: 'Cancer2',
+					description: 'description',
+					iconUrl: 'http://via.placeholder.com/50x50',
+					isActive: false
 				}
 			]
 		}
-		this.handleClick = this.handleClick.bind(this)
 	}
 
 	/* getCategories () {
@@ -50,26 +79,21 @@ export class Categories extends Component {
 
 	handleClick (id) {
 		let oldCategories = this.state.categories
-		oldCategories.forEach((category, index) => {
+		oldCategories.forEach((category) => {
 			if (category.id === id) {
-				oldCategories[index].isActive = !oldCategories[index].isActive
+				category.isActive = !category.isActive
 			}
 		})
 
 		this.setState = {
 			categories: oldCategories
 		}
+		this.forceUpdate()
 	}
 
 	render () {
 		return (
-			<div>Du beau text de test
-			{
-				console.log('yolo man')
-			}
-			</div>
-
-			/* <Card.Group>
+			<Card.Group>
 				{
 					this.state.categories.map(category => {
 						return (
@@ -85,14 +109,19 @@ export class Categories extends Component {
 								</Card.Content>
 								<Card.Content extra>
 									<div className='ui two buttons'>
-										<Button toggle active={category.active} onClick={this.handleClick(category.id)}>Select</Button>
+										<Button
+											toggle
+											active={category.isActive}
+											onClick={() => this.handleClick(category.id)}>
+											{category.isActive ? 'Selected' : 'Select'}
+										</Button>
 									</div>
 								</Card.Content>
 							</Card>
 						)
 					})
 				}
-			</Card.Group> */
+			</Card.Group>
 		)
 	}
 }
