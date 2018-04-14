@@ -1,28 +1,31 @@
 // @flow
 import React from 'react'
-import {List} from 'semantic-ui-react'
+import {List, Grid, Image} from 'semantic-ui-react'
 
 type Props = {
 	link: string,
-	header: string,
+	name: string,
 	desc: string,
-	icon: string
+	icon: string,
+	pourcentage: string
 }
 
-const LinkItem = ({header, icon, desc, link}: Props) => {
+const LinkItem = ({name, icon, desc, link, pourcentage}: Props) => {
 	return (
-		<List.Item>
-			<List.Icon name={icon} size="large" verticalAlign="middle" />
-			<List.Content>
-				<List.Header as="a" href={link}>
-					{header}
-				</List.Header>
-				<List.Description as="a" href={link}>
-					{desc}
-				</List.Description>
-			</List.Content>
-		</List.Item>
-
+		<Grid.Row>
+			<Grid.Column width="3">
+				<Image avatar src={icon} />
+			</Grid.Column>
+			<Grid.Column width="10">
+				<List.Content>
+					<List.Header as='a' href={link}>{name}</List.Header>
+					<List.Description>{desc}</List.Description>
+				</List.Content>
+			</Grid.Column>
+			<Grid.Column width="3">
+				{pourcentage} %
+			</Grid.Column>
+		</Grid.Row>
 	)
 }
 
