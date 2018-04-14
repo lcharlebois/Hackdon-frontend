@@ -68,6 +68,7 @@ function routingFnCreator (useFor) {
 			component: Login,
 			icon: 'bookmark'
 		},
+		{
 			path: '/swipes',
 			exact: true,
 			component: Swipes,

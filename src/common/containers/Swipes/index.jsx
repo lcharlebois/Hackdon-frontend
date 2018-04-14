@@ -3,9 +3,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Header, Grid, Icon, Divider } from 'semantic-ui-react'
 import SwipeCard from './SwipeCard'
-import Cards, { Card } from 'react-swipe-card'
-
-const data = ['Alexandre', 'Thomas', 'Lucien']
 
 const Swipes = () => {
 	return (
