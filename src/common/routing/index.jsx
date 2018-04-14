@@ -5,7 +5,7 @@ import {asyncComponent} from 'react-async-component'
 import {Loader, Dimmer, Header, Icon} from 'semantic-ui-react'
 import _ from 'lodash'
 import Dashboard from 'containers/Dashboard'
-import Swipes from 'containers/Swipes'
+import SwipePage from 'containers/SwipePage'
 import Links from 'containers/Links'
 import Login from 'containers/Login'
 
@@ -71,8 +71,8 @@ function routingFnCreator (useFor) {
 		{
 			path: '/swipes',
 			exact: true,
-			component: Swipes,
-			name: 'Swipes'
+			component: SwipePage,
+			name: 'SwipePage'
 		},
 		{
 			component: asyncComponentCreator('NotFound'),
