@@ -8,7 +8,8 @@ import Dashboard from 'containers/Dashboard'
 import SwipePage from 'containers/SwipePage'
 import Projects from 'containers/Projects'
 import Login from 'containers/Login'
-import Categories from '../components/Categories'
+import CategoriesContainer from '../containers/Categories'
+import SubCategoriesContainer from '../containers/SubCategories'
 
 function asyncComponentCreator (url) {
 	return asyncComponent({
@@ -60,8 +61,14 @@ function routingFnCreator (useFor) {
 		{
 			path: '/categories',
 			exact: true,
-			component: Categories,
+			component: CategoriesContainer,
 			name: 'Categories'
+		},
+		{
+			path: '/subcategories',
+			exact: true,
+			component: SubCategoriesContainer,
+			name: 'SubCategories'
 		},
 		{
 			path: '/projects',
