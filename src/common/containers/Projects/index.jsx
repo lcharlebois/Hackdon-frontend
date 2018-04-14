@@ -5,11 +5,11 @@ import { Header, Grid, Icon, Divider } from 'semantic-ui-react'
 import ProjectCard from './ProjectCard'
 
 const projects = [
-	{ id: 0, name: 'Greenpeace0', description: 'description0', email: 'email@lll0.com', contributorCount: 10, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' },
-	{ id: 1, name: 'Greenpeace1', description: 'description1', email: 'email@lll1.com', contributorCount: 11, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' },
-	{ id: 2, name: 'Greenpeace2', description: 'description2', email: 'email@lll2.com', contributorCount: 12, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' },
-	{ id: 3, name: 'Greenpeace3', description: 'description3', email: 'email@lll3.com', contributorCount: 13, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' },
-	{ id: 4, name: 'Greenpeace4', description: 'description4', email: 'email@lll4.com', contributorCount: 14, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' }]
+	{ id: 0, name: 'Greenpeace0', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 10, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' },
+	{ id: 1, name: 'Greenpeace1', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 11, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' },
+	{ id: 2, name: 'Greenpeace2', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 12, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' },
+	{ id: 3, name: 'Greenpeace3', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 13, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' },
+	{ id: 4, name: 'Greenpeace4', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 14, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' }]
 
 export default class Projects extends React.Component {
 	constructor (props) {
@@ -33,13 +33,13 @@ export default class Projects extends React.Component {
 				<Divider />
 				<Grid columns={3} padded='horizontally'>
 					<Grid.Column verticalAlign='middle' textAlign='center' onClick={this.onLeftSwipe}>
-						<Icon name='angle left' size='massive' />
+						<Icon name='angle left' size='massive' color='orange' />
 					</Grid.Column>
 					<Grid.Column>
 						<ProjectCard {...projects[this.state.index]} />
 					</Grid.Column>
-					<Grid.Column verticalAlign='middle' textAlign='center'>
-						<Icon name='angle right' size='massive' onClick={this.onRightSwipe}/>
+					<Grid.Column verticalAlign='middle' textAlign='center' onClick={this.onRightSwipe}>
+						<Icon name='angle right' size='massive' color='orange'/>
 					</Grid.Column>
 				</Grid>
 			</div>

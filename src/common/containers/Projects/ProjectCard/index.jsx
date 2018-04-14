@@ -4,19 +4,19 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
 export default class Project extends React.Component {
-	render () {
+	render() {
 		return (
-			<Card centered >
+			<Card centered href={this.props.url}>
 				<Image src={this.props.image} />
 				<Card.Content>
 					<Card.Header>
-						{this.props.name}
+						<Item>
+							<Item.Image size='small' src={this.props.logo} />
+							<Item.Content verticalAlign='middle'>
+								<Item.Header as='h3'>{this.props.name}</Item.Header>
+							</Item.Content>
+						</Item>
 					</Card.Header>
-					<Card.Meta>
-						<span className='email'>
-							{this.props.email}
-						</span>
-					</Card.Meta>
 					<Card.Description>
 						{this.props.description}
 					</Card.Description>
@@ -35,7 +35,8 @@ export default class Project extends React.Component {
 Project.propTypes = {
 	name: PropTypes.string,
 	description: PropTypes.string,
-	email: PropTypes.string,
+	url: PropTypes.string,
 	image: PropTypes.string,
+	logo: PropTypes.string,
 	contributorCount: PropTypes.number
 }
