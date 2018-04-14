@@ -26,6 +26,12 @@ class SidebarComponent extends Component<Props> {
 				exact: true,
 				name: 'Links',
 				icon: 'bookmark'
+			},
+			{
+				path: '/projects',
+				exact: true,
+				name: 'Projets',
+				icon: 'users'
 			}
 		]
 
