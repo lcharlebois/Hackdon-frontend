@@ -1,8 +1,6 @@
 // @flow
 import React from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
-import {Helmet} from 'react-helmet'
-import {FormattedMessage} from 'react-intl'
+import { Button, Form } from 'semantic-ui-react'
 
 const Dashboard = () => {
 	return (

@@ -3,7 +3,7 @@ import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
-export default class SwipeCard extends React.Component {
+export default class Project extends React.Component {
 	render () {
 		return (
 			<Card centered >
@@ -32,7 +32,7 @@ export default class SwipeCard extends React.Component {
 	}
 }
 
-SwipeCard.propTypes = {
+Project.propTypes = {
 	name: PropTypes.string,
 	description: PropTypes.string,
 	email: PropTypes.string,

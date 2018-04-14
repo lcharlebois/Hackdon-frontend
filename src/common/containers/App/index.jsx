@@ -6,7 +6,6 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
 // Import main views
 import Sidebar from 'components/Sidebar'
-import Footer from 'components/Footer'
 import Header from 'components/Header'
 // Import actions
 import {TOGGLE_SIDEBAR, WINDOW_RESIZE} from 'actions/layout'

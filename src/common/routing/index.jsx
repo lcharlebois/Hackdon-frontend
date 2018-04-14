@@ -5,7 +5,7 @@ import {asyncComponent} from 'react-async-component'
 import {Loader, Dimmer, Header, Icon} from 'semantic-ui-react'
 import _ from 'lodash'
 import Dashboard from 'containers/Dashboard'
-import SwipePage from 'containers/SwipePage'
+import Profil from 'containers/Profil'
 import Projects from 'containers/Projects'
 import Login from 'containers/Login'
 import CategoriesContainer from '../containers/Categories'
@@ -74,7 +74,7 @@ function routingFnCreator (useFor) {
 			path: '/projects',
 			exact: true,
 			component: Projects,
-			name: 'Projets'
+			name: 'Projects'
 		},
 		{
 			path: '/login',
@@ -83,10 +83,10 @@ function routingFnCreator (useFor) {
 			icon: 'bookmark'
 		},
 		{
-			path: '/swipes',
+			path: '/profil',
 			exact: true,
-			component: SwipePage,
-			name: 'SwipePage'
+			component: Profil,
+			name: 'profil'
 		},
 		{
 			component: asyncComponentCreator('NotFound'),

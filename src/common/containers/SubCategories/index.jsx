@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { Button, Card, Image } from 'semantic-ui-react'
 import Categories from '../../components/Categories'
 
 export default class SubCategoriesContainer extends Component {

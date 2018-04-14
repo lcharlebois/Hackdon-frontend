@@ -1,109 +1,72 @@
-/**
- * @flow
- */
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import Helmet from 'react-helmet'
-import {Loader, Grid, List, Image, Button, Header, Icon} from 'semantic-ui-react'
-import {GET_LINKS} from 'actions/links'
-import LinkItem from './components/LinkItem'
-import {getEntitiesLinksState, isLoaded} from 'selectors'
-import _ from 'lodash'
-
-type Props = {
-	links: Object,
-	getLinks: () => void,
-	isLinksLoaded: boolean
-}
+// @flow
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { Header, Grid, Icon, Divider } from 'semantic-ui-react'
+import ProjectCard from './ProjectCard'
 
 const projects = [
-	{
-		id: 1,
-		name: 'Greenpeace0',
-		icon: 'https://baconmockup.com/50/50',
-		desc: 'Sauver mon chat',
-		link: '/projects/1',
-		pourcentage: 10
-	}, {
-		id: 2,
-		name: 'Greenpeace0',
-		icon: 'https://baconmockup.com/50/50',
-		desc: 'Sauver mon chat',
-		link: '/projects/1',
-		pourcentage: 10
-	}, {
-		id: 3,
-		name: 'Greenpeace0',
-		icon: 'https://baconmockup.com/50/50',
-		desc: 'Sauver mon chat',
-		link: '/projects/1',
-		pourcentage: 10
-	}, {
-		id: 4,
-		name: 'Greenpeace0',
-		icon: 'https://baconmockup.com/50/50',
-		desc: 'Sauver mon chat',
-		link: '/projects/1',
-		pourcentage: 10
-	}
-]
+	{ id: 0, name: 'Greenpeace0', description: 'description0', email: 'email@lll0.com', contributorCount: 10, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' },
+	{ id: 1, name: 'Greenpeace1', description: 'description1', email: 'email@lll1.com', contributorCount: 11, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' },
+	{ id: 2, name: 'Greenpeace2', description: 'description2', email: 'email@lll2.com', contributorCount: 12, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' },
+	{ id: 3, name: 'Greenpeace3', description: 'description3', email: 'email@lll3.com', contributorCount: 13, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' },
+	{ id: 4, name: 'Greenpeace4', description: 'description4', email: 'email@lll4.com', contributorCount: 14, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg' }]
 
-class Links extends Component<Props> {
-	componentDidMount () {
-		if (!this.props.isLinksLoaded) {
-			this.props.getLinks()
+export default class Projects extends React.Component {
+	constructor (props) {
+		super(props)
+		this.state = {
+			index: 0
 		}
-	}
 
-	async asyncBootstrap () {
-		if (!this.props.isLinksLoaded) {
-			await this.props.getLinks()
-		}
-		return true
+		this.onRightSwipe = this.onRightSwipe.bind(this)
+		this.onLeftSwipe = this.onLeftSwipe.bind(this)
 	}
 
 	render () {
-		const {links, isLinksLoaded} = this.props
 		return (
 			<div>
 				<Helmet>
-					<title>Suicrux:Projets</title>
+					<title>SwipePage</title>
 				</Helmet>
-				{!isLinksLoaded ? (
-					<Loader active>Loading data...</Loader>
-				) : (
-					<div>
-						<Header as='h2' icon textAlign='center'>
-							<Icon name='users' circular />
-							<Header.Content>
-							Mes projets supportés
-							</Header.Content>
-						</Header>
-						<Grid columns={3} divided>
-							{_.map(projects, (linkItem, i) => {
-								return <LinkItem key={i} {...linkItem} />
-							})}
-						</Grid>
-						<br/>
-						<Button positive floated='right' as='a' href='/swipes'>Ajouter</Button>
-					</div>
-				)}
+				<Header as="h1">Quelques suggestions basés sur vos préférences</Header>
+				<Header as="h3">Choisissez des projets qui vous tienne à coeur</Header>
+				<Divider />
+				<Grid columns={3} padded='horizontally'>
+					<Grid.Column verticalAlign='middle' textAlign='center' onClick={this.onLeftSwipe}>
+						<Icon name='angle left' size='massive' />
+					</Grid.Column>
+					<Grid.Column>
+						<ProjectCard {...projects[this.state.index]} />
+					</Grid.Column>
+					<Grid.Column verticalAlign='middle' textAlign='center'>
+						<Icon name='angle right' size='massive' onClick={this.onRightSwipe}/>
+					</Grid.Column>
+				</Grid>
 			</div>
 		)
 	}
-}
 
-function mapStateToProps (state) {
-	const linksState = getEntitiesLinksState(state)
-	const links = linksState.entities
-	const isLinksLoaded = isLoaded(linksState)
-	return {links, isLinksLoaded}
-}
+	onRightSwipe () {
+		if (this.state.index < (projects.length - 1)) {
+			this.setState({
+				index: this.state.index + 1
+			})
 
-const mapDispatchToProps = dispatch => ({
-	async getLinks () {
-		return dispatch(GET_LINKS())
+			console.log('Liked') // TODO
+		}
+
+		console.log(this.state.index)
 	}
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Links)
+	onLeftSwipe () {
+		if (this.state.index < (projects.length - 1)) {
+			this.setState({
+				index: this.state.index + 1
+			})
+
+			console.log('Disliked') // TODO
+		}
+
+		console.log(this.state.index)
+	}
+};
