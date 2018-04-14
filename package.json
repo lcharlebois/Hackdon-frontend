@@ -131,7 +131,7 @@
     "chalk": "^2.3.1"
   },
   "scripts": {
-    "build": "npm run frontend_build",
+    "build": "cross-env NODE_ENV=production webpack --config webpack_config/client/webpack.prod.babel.js",
     "start": "cross-env NODE_ENV=development babel-node ./webpack_config/devServer.js"
   },
   "engines": {
