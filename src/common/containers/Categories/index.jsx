@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
+import Fetch from 'react-fetch-component'
+import OData from 'react-odata'
 import Categories from '../../components/Categories'
+const baseUrl = 'http://10.221.1.40:5000/Categories'
 
 export default class CategoriesContainer extends Component {
 	constructor (props) {
@@ -54,32 +57,13 @@ export default class CategoriesContainer extends Component {
 		}
 	}
 
-	/* getCategories () {
-		var promise = new Promise((resolve, reject) => {
-			// resolve(GET_CATEGORIES)
-			resolve(null)
-		})
-		return promise
-	}
-
-	componentWillMount () {
-		this.getCategories()
-			.then(categories => {
-				categories.map(category => {
-					this.state.categories.push({
-						id: category.Id,
-						title: category.Title,
-						description: category.Description,
-						iconUrl: category.IconUrl,
-						isActive: false
-					})
-				})
-			})
-    } */
-
 	render () {
 		return (
-			<Categories categories={this.state.categories}/>
+			<OData baseUrl={baseUrl}>
+				{({ loading, data, error }) => (
+					<Categories categories={data.value}/>
+				)}
+			</OData>
 		)
 	}
 }
