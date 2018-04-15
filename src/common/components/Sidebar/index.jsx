@@ -50,6 +50,12 @@ class SidebarComponent extends Component<Props> {
 				exact: true,
 				name: 'User profile',
 				icon: 'user'
+			},
+			{
+				path: '/subscribe',
+				exact: true,
+				name: 'Subscribe',
+				icon: 'credit card'
 			}
 		]
 

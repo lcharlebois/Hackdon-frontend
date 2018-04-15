@@ -6,14 +6,18 @@ const Login = () => {
 	return (
 		<Form>
 			<Form.Field>
-				<label>Courriel</label>
-				<input placeholder='Courriel' />
+				<label>Email address</label>
+				<input placeholder='Email address' />
 			</Form.Field>
 			<Form.Field>
-				<label>Mot de passe</label>
-				<input placeholder='Mot de passe' />
+				<label>Password</label>
+				<input type="password" placeholder='Password' />
 			</Form.Field>
-			<Button type='submit'>Se connecter</Button>
+			<Form.Field>
+				<label>Password confirmation</label>
+				<input type="password" placeholder='Password confirmation' />
+			</Form.Field>
+			<Button type='submit' floated='right' color='orange' onClick='/user'>Sign up</Button>
 		</Form>
 	)
 }

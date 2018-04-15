@@ -9,6 +9,7 @@ import Projects from 'containers/Projects'
 import Login from 'containers/Login'
 import CategoriesContainer from '../containers/Categories'
 import SubCategoriesContainer from '../containers/SubCategories'
+import Subscribe from '../containers/Subscribe'
 import News from '../containers/News'
 
 function asyncComponentCreator (url) {
@@ -93,6 +94,12 @@ function routingFnCreator (useFor) {
 			exact: true,
 			component: Login,
 			name: 'Login'
+		},
+		{
+			path: '/subscribe',
+			exact: true,
+			component: Subscribe,
+			name: 'Subscribe'
 		},
 		{
 			component: asyncComponentCreator('NotFound'),

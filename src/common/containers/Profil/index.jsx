@@ -49,7 +49,7 @@ export default class Profil extends React.Component {
 const user = {
 	name: 'Jean don pah',
 	photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1gJrTqXMz_DO0hDOyo2cMMJ76hmIfrTMA5mCalphghLhxkTj',
-	credits: 5
+	credits: 2
 }
 
 const projects = [

@@ -6,11 +6,6 @@ import OData from 'react-odata'
 const baseUrl = 'http://a654mdkhmg6h-wua6.humbledonations.com/News'
 
 export default class News extends Component {
-	constructor (props) {
-		super(props)
-		this.state = {}
-	}
-
 	render () {
 		return (
 			<div>
