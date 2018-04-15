@@ -5,10 +5,10 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Grid, Button, Header, Image, Icon, Divider } from 'semantic-ui-react'
 import ProfilProject from './ProfilProject'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import _ from 'lodash'
 
-export default class Profil extends React.Component {
+class Profil extends React.Component {
 	render () {
 		return (
 			<div>
@@ -20,17 +20,17 @@ export default class Profil extends React.Component {
 					<Header.Content>
 						{user.name}
 						<Header.Subheader>
-							You donate {user.credits}$ per month
+							Vous donnez {user.credits}$ par mois
 						</Header.Subheader>
 					</Header.Content>
-					<Button to='/subscribe' floated='right' as={NavLink} color='orange'>Edit monthly donation</Button>
+					<Button to='/subscribe' floated='right' as={NavLink} color='orange'>Modifier votre don mensuel</Button>
 				</Header>
 				<Divider />
 				<br />
 				<Header as='h4'>
 					<Icon name='unordered list' />
 					<Header.Content>
-						Your donations
+						Vos donations
 					</Header.Content>
 				</Header>
 				<br />
@@ -41,17 +41,13 @@ export default class Profil extends React.Component {
 				</Grid>
 				<br />
 				<br />
-				<Button floated='right' color='orange' onClick={this.onSave}>Save</Button>
+				<Button floated='right' color='orange' onClick={this.onSave}>Enregistrer</Button>
 			</div>
 		)
 	}
 }
 
-const user = {
-	name: 'Jean don pah',
-	photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1gJrTqXMz_DO0hDOyo2cMMJ76hmIfrTMA5mCalphghLhxkTj',
-	credits: 2
-}
+export default withCookies(Profil)
 
 const projects = [
 	{
@@ -61,7 +57,7 @@ const projects = [
 		desc: 'Coeur en tête, c’est la bataille de Nathalie  Buisson, cette formidable danseuse des Grands Ballets Canadiens chez qui on diagnostiquait  en  2004  une  tumeur cérébrale maligne incurable. Sur sa route, elle a rencontré Dr David Fortin, neuro-chirurgien et neuro-oncologue au Centre hospitalier universitaire de Sherbrooke, qui lui prodigua un traitement précurseur permettant  de  combattre  les  tumeurs cérébrales.',
 		link: 'http://www.fondationchus.org/activites-de-financement/coeur-en-tete/',
 		percentage: 30
-	},	{
+	}, {
 		id: 2,
 		name: 'Fondation du CHUS - Le futur centre Mère-Enfant',
 		icon: 'http://www.chus.qc.ca/uploads/pics/CHUS_CFJF_2013.jpg',

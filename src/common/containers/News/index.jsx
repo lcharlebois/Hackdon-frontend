@@ -12,7 +12,7 @@ export default class News extends Component {
 				<Helmet>
 					<title>News</title>
 				</Helmet>
-				<Header as="h1">Your personal impact this month</Header>
+				<Header as="h1">Votre impact ce mois-ci</Header>
 				<Divider />
 				<br />
 				<Feed events={events} />

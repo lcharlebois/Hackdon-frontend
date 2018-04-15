@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Fetch from 'react-fetch-component'
 import OData from 'react-odata'
 import {NavLink} from 'react-router-dom'
+import cookies from 'react-cookie'
 const baseUrl = 'http://a654mdkhmg6h-wua6.humbledonations.com/Subscribe'
 
 export default class Subscribe extends Component {
@@ -14,7 +15,13 @@ export default class Subscribe extends Component {
 		}
 	}
 
-	handleChange = (e, { value }) => this.setState({ value })
+	handleChange = (e, { value }) => {
+		this.setState({ value })
+	}
+
+	onSave = () => {
+		cookies.set('credit', this.state.value, { path: '/' })
+	}
 
 	render () {
 		return (
@@ -22,12 +29,12 @@ export default class Subscribe extends Component {
 				<Helmet>
 					<title>Subscribe</title>
 				</Helmet>
-				<Header as="h1">Subscribe to a monthly donation</Header>
+				<Header as="h1">Devenez donateur mensuel</Header>
 				<Divider />
 				<br />
 				<Form size='massive'>
 					<Form.Field inline>
-						<Header as="h3">You will be giving  <b>{this.state.value}$ every month</b></Header>
+						<Header as="h3">Vous donnerez  <b>{this.state.value}$ chaque mois</b></Header>
 					</Form.Field>
 					<br />
 					<Form.Group inline>
@@ -77,7 +84,7 @@ export default class Subscribe extends Component {
 				<br />
 				<Button to='/user' as={NavLink} icon labelPosition='left' floated='right' color='orange' onClick={this.onSave}>
 					<Icon name='credit card' />
-					Save
+					Enregistrer
 				</Button>
 			</ div>
 		)

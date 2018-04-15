@@ -63,13 +63,13 @@ function routingFnCreator (useFor) {
 			path: '/subcategories',
 			exact: true,
 			component: SubCategoriesContainer,
-			name: 'SubCategories'
+			name: 'Sous-Categories'
 		},
 		{
 			path: '/projects',
 			exact: true,
 			component: Projects,
-			name: 'Projects'
+			name: 'Projets'
 		},
 		{
 			path: '/login',
@@ -81,13 +81,13 @@ function routingFnCreator (useFor) {
 			path: '/user',
 			exact: true,
 			component: Profil,
-			name: 'User profile'
+			name: 'Profil d\'utilisateur'
 		},
 		{
 			path: '/news',
 			exact: true,
 			component: News,
-			name: 'News'
+			name: 'Nouvelles'
 		},
 		{
 			path: '/login',
@@ -99,7 +99,7 @@ function routingFnCreator (useFor) {
 			path: '/subscribe',
 			exact: true,
 			component: Subscribe,
-			name: 'Subscribe'
+			name: 'Abonnement'
 		},
 		{
 			component: asyncComponentCreator('NotFound'),
