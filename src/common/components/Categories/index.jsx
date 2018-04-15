@@ -35,24 +35,25 @@ export default class Categories extends Component {
 			<div>
 				<Card.Group>
 					{
-						this.categories.map((category) => {
+						this.props.categories.map((category) => {
 							return (
 								<Card key={category.id}>
 									<Card.Content>
-										<Image floated='right' size='mini' src={category.IconUrl} />
+										<Image floated='right' size='mini' src={category.iconUrl} />
 										<Card.Header>
-											{category.Title}
+											{category.title}
 										</Card.Header>
 										<Card.Description>
-											{category.Description}
+											{category.description}
 										</Card.Description>
 									</Card.Content>
 									<Card.Content extra>
 										<div className='ui two buttons'>
 											<Button
+												style={{backgroundColor: 'orange'}}
 												toggle
-												active={category.IsActive}
-												onClick={() => this.handleClick(category.Id)}>
+												active={category.isActive}
+												onClick={() => this.handleClick(category.id)}>
 												{category.isActive ? 'Selected' : 'Select'}
 											</Button>
 										</div>

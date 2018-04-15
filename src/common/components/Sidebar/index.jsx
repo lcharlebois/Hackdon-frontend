@@ -16,7 +16,7 @@ class SidebarComponent extends Component<Props> {
 		const {sidebarOpened} = this.props
 		const routing: any[] = [
 			{
-				path: '/cc',
+				path: '/',
 				exact: true,
 				name: 'Categories',
 				icon: 'bookmark'

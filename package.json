@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "src/client/index.jsx",
   "description": "Humble Donations",
+  "apiUrl": "http://localhost:54883/api",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.2",
     "chokidar": "^2.0.2",
     "compression": "^1.7.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
+    "express-http-proxy": "1.1.0",
     "helmet": "^3.11.0",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
@@ -21,6 +24,7 @@
     "react": "^16.2.0",
     "react-async-bootstrapper": "^2.1.0",
     "react-async-component": "^1.0.2",
+    "react-axios": "^2.0.0",
     "react-dom": "^16.2.0",
     "react-fetch-component": "^5.4.1",
     "react-ga": "^2.4.1",
@@ -41,7 +45,6 @@
     "semantic-ui-css": "^2.2.14",
     "semantic-ui-react": "^0.79.0",
     "serialize-javascript": "^1.4.0",
-    "express-http-proxy": "1.1.0",
     "styled-components": "^3.1.6"
   },
   "devDependencies": {

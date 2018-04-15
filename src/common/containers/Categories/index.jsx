@@ -1,24 +1,27 @@
 import React, {Component} from 'react'
 import { Button, Grid, Icon } from 'semantic-ui-react'
 import Fetch from 'react-fetch-component'
-import OData from 'react-odata'
 import Categories from '../../components/Categories'
-const baseUrl = 'http://a654mdkhmg6h-wua6.humbledonations.com/Categories'
+import { apiUrl } from '../../../../package.json'
 
 export default class CategoriesContainer extends Component {
 	constructor (props) {
 		super(props)
-		this.state = {}
+		this.state = {
+			categories: []
+		}
+	}
+
+	componentDidMount () {
+		fetch(apiUrl + '/Categories')
+		  .then(response => response.json())
+		  .then(data => this.setState({ categories: data }))
 	}
 
 	render () {
 		return (
 			<div>
-				<OData baseUrl={baseUrl}>
-					{({ loading, data, error }) => (
-						<Categories categories={data.value}/>
-					)}
-				</OData>
+				<Categories categories={this.state.categories}/>
 				<Grid columns={3}>
 					<Grid.Row>
 						<Grid.Column />

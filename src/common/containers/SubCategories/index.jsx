@@ -1,34 +1,36 @@
 import React, {Component} from 'react'
-import { Button, Grid } from 'semantic-ui-react'
-import Categories from '../../components/Categories'
+import { Button, Grid, Icon } from 'semantic-ui-react'
 import Fetch from 'react-fetch-component'
-import OData from 'react-odata'
-const baseUrl = 'http://a654mdkhmg6h-wua6.humbledonations.com/SubCategories'
+import Categories from '../../components/Categories'
+import { apiUrl } from '../../../../package.json'
 
 export default class SubCategoriesContainer extends Component {
 	constructor (props) {
 		super(props)
-		this.state = {}
+		this.state = {
+			subCategories: []
+		}
+	}
+
+	componentDidMount () {
+		fetch(apiUrl + '/SubCategories')
+		  .then(response => response.json())
+		  .then(data => this.setState({ subCategories: data }))
 	}
 
 	render () {
 		return (
 			<div>
-				<OData baseUrl={baseUrl}>
-					{({ loading, data, error }) => (
-						<Categories categories={data.value}/>
-					)}
-				</OData>
+				<Categories categories={this.state.subCategories}/>
 				<Grid columns={3}>
 					<Grid.Row>
 						<Grid.Column />
 						<Grid.Column />
 						<Grid.Column>
-							<Button.Group>
-								<Button>Backs</Button>
-								<Button.Or />
-								<Button positive>Save</Button>
-							</Button.Group>
+							<Button icon labelPosition='right'>
+								Next
+								<Icon name='right arrow' />
+							</Button>
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
