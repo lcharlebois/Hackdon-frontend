@@ -74,7 +74,7 @@ export default class Subscribe extends Component {
 				</Form>
 				<br />
 				<br />
-				<Button icon labelPosition='left' floated='right' color='orange' onClick={this.onSave}>
+				<Button href='http://localhost:5000/user' icon labelPosition='left' floated='right' color='orange' onClick={this.onSave}>
 					<Icon name='credit card' />
 					Save
 				</Button>

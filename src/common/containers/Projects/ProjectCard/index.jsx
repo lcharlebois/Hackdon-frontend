@@ -5,6 +5,9 @@ import PropTypes from 'prop-types'
 
 export default class Project extends React.Component {
 	render () {
+		if (this.props.id === undefined) {
+			return 	<Item.Header as='h1'>Revenez plus tard pour plus de suggestions</Item.Header>
+		}
 		return (
 			<Card centered href={this.props.url}>
 				<Image src={this.props.image} />
@@ -35,6 +38,7 @@ export default class Project extends React.Component {
 }
 
 Project.propTypes = {
+	id: PropTypes.number,
 	name: PropTypes.string,
 	description: PropTypes.string,
 	url: PropTypes.string,

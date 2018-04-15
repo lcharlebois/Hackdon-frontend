@@ -2,20 +2,15 @@
 import ProjectCard from './ProjectCard'
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Grid, Header, Icon, Divider } from 'semantic-ui-react'
-
-const projects = [
-	{ id: 0, name: 'Greenpeace0', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 10, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' },
-	{ id: 1, name: 'Greenpeace1', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 11, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' },
-	{ id: 2, name: 'Greenpeace2', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 12, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' },
-	{ id: 3, name: 'Greenpeace3', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 13, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' },
-	{ id: 4, name: 'Greenpeace4', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 14, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' }]
+import { Grid, Header, Icon, Divider, Transition } from 'semantic-ui-react'
 
 export default class Projects extends React.Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			index: 0
+			index: 0,
+			upVisible: true,
+			downVisible: true
 		}
 
 		this.onRightSwipe = this.onRightSwipe.bind(this)
@@ -23,23 +18,31 @@ export default class Projects extends React.Component {
 	}
 
 	render () {
+		const { upVisible, downVisible } = this.state
+
 		return (
 			<div>
 				<Helmet>
 					<title>Projects</title>
 				</Helmet>
-				<Header as="h1">Quelques suggestions basés sur vos préférences</Header>
+				<Header as="h1">Voici quelques suggestions basés sur vos préférences</Header>
 				<Header as="h3">Choisissez des projets qui vous tienne à coeur</Header>
 				<Divider />
-				<Grid columns={3} padded='horizontally'>
+				<br />
+				<br />
+				<Grid columns='3'>
 					<Grid.Column verticalAlign='middle' textAlign='center' onClick={this.onLeftSwipe}>
-						<Icon name='angle left' size='massive' color='orange' />
+						<Transition animation='shake' duration='400' visible={downVisible}>
+							<Icon disabled={this.state.index === projects.length} name='thumbs outline down' size='massive' color='orange'/>
+						</Transition>
 					</Grid.Column>
-					<Grid.Column>
+					<Grid.Column >
 						<ProjectCard {...projects[this.state.index]} />
 					</Grid.Column>
 					<Grid.Column verticalAlign='middle' textAlign='center' onClick={this.onRightSwipe}>
-						<Icon name='angle right' size='massive' color='orange' />
+						<Transition animation='pulse' duration='200' visible={upVisible}>
+							<Icon disabled={this.state.index === projects.length} name='thumbs outline up' size='massive' color='orange'/>
+						</Transition>
 					</Grid.Column>
 				</Grid>
 			</div>
@@ -47,9 +50,10 @@ export default class Projects extends React.Component {
 	}
 
 	onRightSwipe () {
-		if (this.state.index < (projects.length - 1)) {
+		if (this.state.index < projects.length) {
 			this.setState({
-				index: this.state.index + 1
+				index: this.state.index + 1,
+				upVisible: !this.state.upVisible
 			})
 
 			console.log('Liked') // TODO
@@ -59,9 +63,10 @@ export default class Projects extends React.Component {
 	}
 
 	onLeftSwipe () {
-		if (this.state.index < (projects.length - 1)) {
+		if (this.state.index < projects.length) {
 			this.setState({
-				index: this.state.index + 1
+				index: this.state.index + 1,
+				downVisible: !this.state.downVisible
 			})
 
 			console.log('Disliked') // TODO
@@ -70,3 +75,38 @@ export default class Projects extends React.Component {
 		console.log(this.state.index)
 	}
 };
+
+const projects = [
+	{
+		id: 1,
+		logo: 'https://www.jedonneenligne.org/fondationchus/view.php?file_id=logo_Logoofficiel.jpg',
+		name: 'Futur centre Mère-Enfant',
+		image: 'data:image/jpeg;base64,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',
+		description: 'Renouvellement des salles d’angiographie et de radiologie interventionnelle. Renouvellement des salles de cardiologie interventionnelle. Réaménagement majeur du Pavillon Émile-Noël, consacré à la santé mentale',
+		url: 'http://www.fondationchus.org/realisations/projets-majeurs/',
+		contributorCount: 25
+	}, {
+		id: 0,
+		name: 'Coeur en tête',
+		logo: 'https://www.jedonneenligne.org/fondationchus/view.php?file_id=logo_Logoofficiel.jpg',
+		image: 'http://www.fondationchus.org/clients/Fondation/activites/coeur_en_tete/coeur_en_tete_logo.jpg',
+		description: 'Coeur en tête, c’est la bataille de Nathalie  Buisson, cette formidable danseuse des Grands Ballets Canadiens chez qui on diagnostiquait  en  2004  une  tumeur cérébrale maligne incurable. Sur sa route, elle a rencontré Dr David Fortin, neuro-chirurgien et neuro-oncologue au Centre hospitalier universitaire de Sherbrooke, qui lui prodigua un traitement précurseur permettant  de  combattre  les  tumeurs cérébrales.',
+		url: 'http://www.fondationchus.org/activites-de-financement/coeur-en-tete/',
+		contributorCount: 30
+	}, {
+		id: 2,
+		name: 'L’Arctique ',
+		logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdMRL_O_R1Vrwooq0CElRMzuQxiJQXBHirRZFeDsSUThrfSDv',
+		image: 'http://www.greenpeace.org/canada/Global/canada/image/2012/06/GP0506.jpg',
+		description: 'L’Arctique est en danger. À cause des changements climatiques, la fonte des glaces s’accélère et ouvre le chemin aux compagnies pétrolières et aux flottes de pêche assoiffées de profits qui voient dans cette catastrophe une opportunité d’affaires. La survie et la culture des peuples autochtones et de tous les habitants du Nord, ainsi que celle de la faune, sont inutilement mises en péril au nom d’une idée erronée de progrès et de croissance. Étant l’un de plus grands pays arctiques au monde, le Canada a la responsabilité de se distancier de tout projet ravageur de la nature, et de promouvoir un développement vraiment durable dans le Nord. La campagne Arctique de Greenpeace est un effort mondial pour interdire toute activité destructive dans l’océan Arctique. Ensemble, #SauvonslArctique !',
+		url: 'http://www.greenpeace.org/canada/fr/campagnes/',
+		contributorCount: 15
+	}, {
+		id: 3,
+		name: 'Shaved head challenge',
+		logo: 'data:image/png;base64,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',
+		image: 'https://www.tetesrasees.com/wp-content/uploads/2018/04/574539_10152874021380644_1780884272_n-e1523371245652.jpg',
+		description: 'Leucan is proud to launch the 18th edition of the Leucan Shaved Head Challenge, presented by PROXIM today and to invite our next generation of leaders to join the Leucan Leadership Challenge',
+		url: 'https://www.tetesrasees.com/en/category/news/',
+		contributorCount: 15
+	}]

@@ -22,7 +22,7 @@ export default class Profil extends React.Component {
 							You donate {user.credits}$ per month
 						</Header.Subheader>
 					</Header.Content>
-					<Button floated='right' as='a' color='orange'>Edit monthly donation</Button>
+					<Button href='http://localhost:5000/subscribe' floated='right' as='a' color='orange'>Edit monthly donation</Button>
 				</Header>
 				<Divider />
 				<br />
@@ -55,31 +55,30 @@ const user = {
 const projects = [
 	{
 		id: 1,
-		name: 'Greenpeace0',
-		icon: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg',
-		desc: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !',
-		link: '/projects/1',
+		name: 'Fondation du CHUS - Cour en tête',
+		icon: 'http://www.fondationchus.org/clients/Fondation/activites/coeur_en_tete/coeur_en_tete_logo.jpg',
+		desc: 'Coeur en tête, c’est la bataille de Nathalie  Buisson, cette formidable danseuse des Grands Ballets Canadiens chez qui on diagnostiquait  en  2004  une  tumeur cérébrale maligne incurable. Sur sa route, elle a rencontré Dr David Fortin, neuro-chirurgien et neuro-oncologue au Centre hospitalier universitaire de Sherbrooke, qui lui prodigua un traitement précurseur permettant  de  combattre  les  tumeurs cérébrales.',
+		link: 'http://www.fondationchus.org/activites-de-financement/coeur-en-tete/',
+		percentage: 30
+	},	{
+		id: 2,
+		name: 'Fondation du CHUS - Le futur centre Mère-Enfant',
+		icon: 'http://www.chus.qc.ca/uploads/pics/CHUS_CFJF_2013.jpg',
+		desc: 'Renouvellement des salles d’angiographie et de radiologie interventionnelle. Renouvellement des salles de cardiologie interventionnelle. Réaménagement majeur du Pavillon Émile-Noël, consacré à la santé mentale',
+		link: 'http://www.fondationchus.org/realisations/projets-majeurs/',
 		percentage: 25
 	}, {
 		id: 2,
-		name: 'Greenpeace0',
-		icon: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg',
-		desc: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !',
-		link: '/projects/1',
+		name: 'Greenpeace - L’Arctique ',
+		icon: 'http://www.greenpeace.org/canada/Global/canada/image/2012/06/GP0506.jpg',
+		desc: 'L’Arctique est en danger. À cause des changements climatiques, la fonte des glaces s’accélère et ouvre le chemin aux compagnies pétrolières et aux flottes de pêche assoiffées de profits qui voient dans cette catastrophe une opportunité d’affaires. La survie et la culture des peuples autochtones et de tous les habitants du Nord, ainsi que celle de la faune, sont inutilement mises en péril au nom d’une idée erronée de progrès et de croissance. Étant l’un de plus grands pays arctiques au monde, le Canada a la responsabilité de se distancier de tout projet ravageur de la nature, et de promouvoir un développement vraiment durable dans le Nord. La campagne Arctique de Greenpeace est un effort mondial pour interdire toute activité destructive dans l’océan Arctique. Ensemble, #SauvonslArctique !',
+		link: 'http://www.greenpeace.org/canada/fr/campagnes/',
 		percentage: 15
 	}, {
 		id: 3,
-		name: 'Greenpeace0',
-		icon: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg',
-		desc: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !',
-		link: '/projects/1',
-		percentage: 30
-	}, {
-		id: 4,
-		name: 'Greenpeace0',
-		icon: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg',
-		desc: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !',
-		link: '/projects/1',
-		percentage: 20
-	}
-]
+		name: 'LEUCAN shaved head challenge',
+		icon: 'https://www.tetesrasees.com/wp-content/uploads/2018/04/574539_10152874021380644_1780884272_n-e1523371245652.jpg',
+		desc: 'Leucan is proud to launch the 18th edition of the Leucan Shaved Head Challenge, presented by PROXIM today and to invite our next generation of leaders to join the Leucan Leadership Challenge',
+		link: 'https://www.tetesrasees.com/en/category/news/',
+		percentage: 15
+	}]
