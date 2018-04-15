@@ -74,12 +74,13 @@ class SidebarComponent extends Component<Props> {
 
 		return (
 			<StyledSidebar {...sidebarProps}>
-				<a className="logo-container" href="/">
+				<a className="logo-container">
 					<Image
 						src={require('static/images/Logo110.png')}
 						alt="logo"
 						shape="circular"
 						centered
+						as={NavLink} to='/'
 					/>
 				</a>
 				{routes}
