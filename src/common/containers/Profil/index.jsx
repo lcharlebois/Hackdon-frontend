@@ -5,6 +5,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Grid, Button, Header, Image, Icon, Divider } from 'semantic-ui-react'
 import ProfilProject from './ProfilProject'
+import {NavLink} from 'react-router-dom'
 import _ from 'lodash'
 
 export default class Profil extends React.Component {
@@ -22,7 +23,7 @@ export default class Profil extends React.Component {
 							You donate {user.credits}$ per month
 						</Header.Subheader>
 					</Header.Content>
-					<Button href='http://localhost:5000/subscribe' floated='right' as='a' color='orange'>Edit monthly donation</Button>
+					<Button to='/subscribe' floated='right' as={NavLink} color='orange'>Edit monthly donation</Button>
 				</Header>
 				<Divider />
 				<br />
