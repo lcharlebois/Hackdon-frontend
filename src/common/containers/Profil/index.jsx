@@ -5,7 +5,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Grid, Button, Header, Image, Icon, Divider } from 'semantic-ui-react'
 import ProfilProject from './ProfilProject'
+import { NavLink } from 'react-router-dom'
 import _ from 'lodash'
+import Cookies from 'js-cookie'
 
 export default class Profil extends React.Component {
 	render () {
@@ -19,17 +21,17 @@ export default class Profil extends React.Component {
 					<Header.Content>
 						{user.name}
 						<Header.Subheader>
-							You donate {user.credits}$ per month
+							Vous donnez {Cookies.get('credit') | 0}$ par mois
 						</Header.Subheader>
 					</Header.Content>
-					<Button href='http://localhost:5000/subscribe' floated='right' as='a' color='orange'>Edit monthly donation</Button>
+					<Button to='/subscribe' floated='right' as={NavLink} color='orange'>Modifier votre don mensuel</Button>
 				</Header>
 				<Divider />
 				<br />
 				<Header as='h4'>
 					<Icon name='unordered list' />
 					<Header.Content>
-						Your donations
+						Vos donations
 					</Header.Content>
 				</Header>
 				<br />
@@ -40,7 +42,7 @@ export default class Profil extends React.Component {
 				</Grid>
 				<br />
 				<br />
-				<Button floated='right' color='orange' onClick={this.onSave}>Save</Button>
+				<Button floated='right' color='orange' onClick={this.onSave}>Enregistrer</Button>
 			</div>
 		)
 	}
@@ -52,7 +54,7 @@ const user = {
 	credits: 2
 }
 
-const projects = [
+var projects = [
 	{
 		id: 1,
 		name: 'Fondation du CHUS - Cour en tête',
@@ -60,7 +62,7 @@ const projects = [
 		desc: 'Coeur en tête, c’est la bataille de Nathalie  Buisson, cette formidable danseuse des Grands Ballets Canadiens chez qui on diagnostiquait  en  2004  une  tumeur cérébrale maligne incurable. Sur sa route, elle a rencontré Dr David Fortin, neuro-chirurgien et neuro-oncologue au Centre hospitalier universitaire de Sherbrooke, qui lui prodigua un traitement précurseur permettant  de  combattre  les  tumeurs cérébrales.',
 		link: 'http://www.fondationchus.org/activites-de-financement/coeur-en-tete/',
 		percentage: 30
-	},	{
+	}, {
 		id: 2,
 		name: 'Fondation du CHUS - Le futur centre Mère-Enfant',
 		icon: 'http://www.chus.qc.ca/uploads/pics/CHUS_CFJF_2013.jpg',

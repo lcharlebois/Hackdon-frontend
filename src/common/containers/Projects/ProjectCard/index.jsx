@@ -9,7 +9,7 @@ export default class Project extends React.Component {
 			return 	<Item.Header as='h1'>Revenez plus tard pour plus de suggestions</Item.Header>
 		}
 		return (
-			<Card centered href={this.props.url}>
+			<Card centered href={this.props.url} target='blank'>
 				<Image src={this.props.image} />
 				<Card.Content>
 					<Card.Header>

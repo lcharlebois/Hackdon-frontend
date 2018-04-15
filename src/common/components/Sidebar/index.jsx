@@ -24,25 +24,25 @@ class SidebarComponent extends Component<Props> {
 			{
 				path: '/news',
 				exact: true,
-				name: 'News',
+				name: 'Nouvelles',
 				icon: 'newspaper'
 			},
 			{
 				path: '/projects',
 				exact: true,
-				name: 'projects',
+				name: 'Projets',
 				icon: 'list'
 			},
 			{
 				path: '/user',
 				exact: true,
-				name: 'User profile',
+				name: 'Profil d\'utilisateur',
 				icon: 'user'
 			},
 			{
 				path: '/subscribe',
 				exact: true,
-				name: 'Subscribe',
+				name: 'Abonnement',
 				icon: 'credit card'
 			}
 		]

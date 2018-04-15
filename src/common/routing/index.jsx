@@ -58,22 +58,28 @@ function routingFnCreator (useFor) {
 			name: 'Préférences'
 		},
 		{
+			path: '/projects',
+			exact: true,
+			component: Projects,
+			name: 'Projets'
+		},
+		{
 			path: '/user',
 			exact: true,
 			component: Profil,
-			name: 'User profile'
+			name: 'Profil d\'utilisateur'
 		},
 		{
 			path: '/news',
 			exact: true,
 			component: News,
-			name: 'News'
+			name: 'Nouvelles'
 		},
 		{
 			path: '/subscribe',
 			exact: true,
 			component: Subscribe,
-			name: 'Subscribe'
+			name: 'Abonnement'
 		},
 		{
 			component: asyncComponentCreator('NotFound'),
