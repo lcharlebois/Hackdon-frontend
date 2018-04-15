@@ -46,9 +46,9 @@ class SidebarComponent extends Component<Props> {
 				icon: 'list'
 			},
 			{
-				path: '/profil',
+				path: '/user',
 				exact: true,
-				name: 'profil',
+				name: 'User profile',
 				icon: 'user'
 			}
 		]

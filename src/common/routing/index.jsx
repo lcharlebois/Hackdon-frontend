@@ -77,10 +77,10 @@ function routingFnCreator (useFor) {
 			icon: 'bookmark'
 		},
 		{
-			path: '/profil',
+			path: '/user',
 			exact: true,
 			component: Profil,
-			name: 'profil'
+			name: 'User profile'
 		},
 		{
 			path: '/news',
