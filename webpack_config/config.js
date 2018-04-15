@@ -11,7 +11,7 @@ const {
 	GA_ID,
 	ANALYZE_BUNDLE,
 	SENTRY_DSN,
-	PORT = 3000,
+	PORT = 5000,
 	HOST = 'localhost',
 	INSPECT_ENABLED = true
 } = process.env

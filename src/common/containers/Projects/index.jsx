@@ -1,8 +1,8 @@
 // @flow
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { Header, Grid, Icon, Divider } from 'semantic-ui-react'
 import ProjectCard from './ProjectCard'
+import React from 'react'
+import Helmet from 'react-helmet'
+import { Grid, Header, Icon, Divider } from 'semantic-ui-react'
 
 const projects = [
 	{ id: 0, name: 'Greenpeace0', description: 'En ce moment même, l’Arctic Sunrise, le brise-glace de la flotte arc-en-ciel de Greenpeace, met le cap sur l’extrême sud de notre globe. Au cours des trois prochains mois, son équipage travaillera coude-à-coude avec des scientifiques, des photographes et des journalistes du monde entier pour promouvoir la création, dans l’océan Antarctique, de la plus grande réserve marine du monde. Enfilez vos gants et votre bonnet, on vous embarque !', email: 'http://www.greenpeace.org', contributorCount: 10, image: 'https://cdn-images-1.medium.com/max/1200/1*2ZhAYHG33LmdNMJ3vNk2qw.jpeg', logo: 'https://aladecouvertede2cultures.files.wordpress.com/2017/01/greenpeace.jpg' },
@@ -39,7 +39,7 @@ export default class Projects extends React.Component {
 						<ProjectCard {...projects[this.state.index]} />
 					</Grid.Column>
 					<Grid.Column verticalAlign='middle' textAlign='center' onClick={this.onRightSwipe}>
-						<Icon name='angle right' size='massive' color='orange'/>
+						<Icon name='angle right' size='massive' color='orange' />
 					</Grid.Column>
 				</Grid>
 			</div>
