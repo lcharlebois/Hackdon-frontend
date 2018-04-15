@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Button, Card, Image } from 'semantic-ui-react'
+import { Button, Card, Image, Grid } from 'semantic-ui-react'
 import Fetch from 'react-fetch-component'
 import OData from 'react-odata'
 import Categories from '../../components/Categories'
@@ -13,11 +13,25 @@ export default class CategoriesContainer extends Component {
 
 	render () {
 		return (
-			<OData baseUrl={baseUrl}>
-				{({ loading, data, error }) => (
-					<Categories categories={data.value}/>
-				)}
-			</OData>
+			<div>
+				<OData baseUrl={baseUrl}>
+					{({ loading, data, error }) => (
+						<Categories categories={data.value}/>
+					)}
+				</OData>
+				<Grid columns={3}>
+					<Grid.Row>
+						<Grid.Column />
+						<Grid.Column />
+						<Grid.Column>
+							<Button icon labelPosition='right'>
+						Next
+								<Icon name='right arrow' />
+							</Button>
+						</Grid.Column>
+					</Grid.Row>
+				</Grid>
+			</div>
 		)
 	}
 }
