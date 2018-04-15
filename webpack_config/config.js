@@ -25,7 +25,7 @@ const rootPath = path.join(__dirname, '../') // = "/"
 const distPath = path.join(rootPath, './dist') // = "/dist"
 const srcPath = path.join(rootPath, './src') // = "/src"
 const srcCommonPath = path.join(srcPath, './common') // = "/src/common"
-const publicPath = !isProduction ? `http://localhost:${PORT}/` : '/'
+const publicPath = isProduction ? `http://a654mdkhmg6h-frontend.humbledonations.com:${PORT}/` : '/'
 
 // Vars for server only
 const CLIENT_STATIC_PATH = path.join(distPath, './client') // = "/dist/client"

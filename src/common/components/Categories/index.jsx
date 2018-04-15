@@ -32,35 +32,37 @@ export default class Categories extends Component {
 
 	render () {
 		return (
-			<Card.Group>
-				{
-					this.state.categories.map(category => {
-						return (
-							<Card key={category.id}>
-								<Card.Content>
-									<Image floated='right' size='mini' src={category.iconUrl} />
-									<Card.Header>
-										{category.title}
-									</Card.Header>
-									<Card.Description>
-										{category.description}
-									</Card.Description>
-								</Card.Content>
-								<Card.Content extra>
-									<div className='ui two buttons'>
-										<Button
-											toggle
-											active={category.isActive}
-											onClick={() => this.handleClick(category.id)}>
-											{category.isActive ? 'Selected' : 'Select'}
-										</Button>
-									</div>
-								</Card.Content>
-							</Card>
-						)
-					})
-				}
-			</Card.Group>
+			<div>
+				<Card.Group>
+					{
+						this.categories.map((category) => {
+							return (
+								<Card key={category.id}>
+									<Card.Content>
+										<Image floated='right' size='mini' src={category.IconUrl} />
+										<Card.Header>
+											{category.Title}
+										</Card.Header>
+										<Card.Description>
+											{category.Description}
+										</Card.Description>
+									</Card.Content>
+									<Card.Content extra>
+										<div className='ui two buttons'>
+											<Button
+												toggle
+												active={category.IsActive}
+												onClick={() => this.handleClick(category.Id)}>
+												{category.isActive ? 'Selected' : 'Select'}
+											</Button>
+										</div>
+									</Card.Content>
+								</Card>
+							)
+						})
+					}
+				</Card.Group>
+			</div>
 		)
 	}
 }

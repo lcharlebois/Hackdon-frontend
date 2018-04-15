@@ -22,9 +22,15 @@ class SidebarComponent extends Component<Props> {
 				icon: 'newspaper'
 			},
 			{
-				path: '/categories',
+				path: '/',
 				exact: true,
 				name: 'Categories',
+				icon: 'bookmark'
+			},
+			{
+				path: '/news',
+				exact: true,
+				name: 'News',
 				icon: 'bookmark'
 			},
 			{

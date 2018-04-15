@@ -1,84 +1,38 @@
 import React, {Component} from 'react'
+import { Button, Grid } from 'semantic-ui-react'
 import Categories from '../../components/Categories'
+import Fetch from 'react-fetch-component'
+import OData from 'react-odata'
+const baseUrl = 'http://a654mdkhmg6h-wua6.humbledonations.com/SubCategories'
 
 export default class SubCategoriesContainer extends Component {
 	constructor (props) {
 		super(props)
-		this.state = {
-			categories:
-			[
-				{
-					id: 0,
-					title: 'SubCancer',
-					description: 'description',
-					iconUrl: 'http://via.placeholder.com/50x50',
-					isActive: true
-				},
-				{
-					id: 1,
-					title: 'SubCancer',
-					description: 'description',
-					iconUrl: 'http://via.placeholder.com/50x50',
-					isActive: true
-				},
-				{
-					id: 2,
-					title: 'SubCancer2',
-					description: 'description',
-					iconUrl: 'http://via.placeholder.com/50x50',
-					isActive: false
-				},
-				{
-					id: 3,
-					title: 'SubCancer',
-					description: 'description',
-					iconUrl: 'http://via.placeholder.com/50x50',
-					isActive: true
-				},
-				{
-					id: 4,
-					title: 'subCancer2',
-					description: 'description',
-					iconUrl: 'http://via.placeholder.com/50x50',
-					isActive: false
-				},
-				{
-					id: 5,
-					title: 'Cancer2',
-					description: 'description',
-					iconUrl: 'http://via.placeholder.com/50x50',
-					isActive: false
-				}
-			]
-		}
+		this.state = {}
 	}
-
-	/* getCategories () {
-		var promise = new Promise((resolve, reject) => {
-			// resolve(GET_CATEGORIES)
-			resolve(null)
-		})
-		return promise
-	}
-
-	componentWillMount () {
-		this.getCategories()
-			.then(categories => {
-				categories.map(category => {
-					this.state.categories.push({
-						id: category.Id,
-						title: category.Title,
-						description: category.Description,
-						iconUrl: category.IconUrl,
-						isActive: false
-					})
-				})
-			})
-    } */
 
 	render () {
 		return (
-			<Categories categories={this.state.categories}/>
+			<div>
+				<OData baseUrl={baseUrl}>
+					{({ loading, data, error }) => (
+						<Categories categories={data.value}/>
+					)}
+				</OData>
+				<Grid columns={3}>
+					<Grid.Row>
+						<Grid.Column />
+						<Grid.Column />
+						<Grid.Column>
+							<Button.Group>
+								<Button>Backs</Button>
+								<Button.Or />
+								<Button positive>Save</Button>
+							</Button.Group>
+						</Grid.Column>
+					</Grid.Row>
+				</Grid>
+			</div>
 		)
 	}
 }

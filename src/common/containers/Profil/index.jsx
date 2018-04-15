@@ -14,7 +14,7 @@ export default class Profil extends React.Component {
 				<Helmet>
 					<title>Profil</title>
 				</Helmet>
-				<Header as='h2' color='orange'>
+				<Header as='h2'>
 					<Image src={user.photo} />
 					<Header.Content>
 						{user.name}

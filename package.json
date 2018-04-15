@@ -41,6 +41,7 @@
     "semantic-ui-css": "^2.2.14",
     "semantic-ui-react": "^0.79.0",
     "serialize-javascript": "^1.4.0",
+    "express-http-proxy": "1.1.0",
     "styled-components": "^3.1.6"
   },
   "devDependencies": {
@@ -137,7 +138,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack_config/client/webpack.prod.babel.js",
-    "start": "node ./dist/server",
+    "start": "cross-env NODE_ENV=production babel-node ./webpack_config/devServer.js",
     "dev": "cross-env NODE_ENV=development babel-node ./webpack_config/devServer.js",
     "test": "echo Done"
   },

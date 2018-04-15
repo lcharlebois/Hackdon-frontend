@@ -2,7 +2,7 @@
 import React from 'react'
 import { Button, Form } from 'semantic-ui-react'
 
-const Dashboard = () => {
+const Login = () => {
 	return (
 		<Form>
 			<Form.Field>
@@ -18,4 +18,4 @@ const Dashboard = () => {
 	)
 }
 
-export default Dashboard
+export default Login
