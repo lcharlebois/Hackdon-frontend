@@ -3,7 +3,7 @@ import { Button, Card, Image, Grid } from 'semantic-ui-react'
 import Categories from '../../components/Categories'
 import Fetch from 'react-fetch-component'
 import OData from 'react-odata'
-const baseUrl = 'http://10.221.1.40:5000/SubCategories'
+const baseUrl = 'http://a654mdkhmg6h-wua6.humbledonations.com/SubCategories'
 
 export default class SubCategoriesContainer extends Component {
 	constructor (props) {
