@@ -4,7 +4,7 @@ import {media} from 'styles/utils'
 export const StyledHeader = styled.header`
 	background: ${props => props.theme.navy};
 	color: ${props => props.theme.white};
-	border-bottom: 1px solid ${props => props.theme.black};;
+	border-bottom: 1px solid ${props => props.theme.black};
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -22,6 +22,7 @@ export const StyledHeader = styled.header`
 		font-size: 24px;
 		align-items: center;
 		display: flex;
+		color: 
 	}
 
 	.navicon {

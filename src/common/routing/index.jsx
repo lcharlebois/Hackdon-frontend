@@ -4,12 +4,12 @@ import {createBrowserHistory, createMemoryHistory} from 'history'
 import {asyncComponent} from 'react-async-component'
 import {Loader, Dimmer, Header, Icon} from 'semantic-ui-react'
 import _ from 'lodash'
-import Dashboard from 'containers/Dashboard'
 import SwipePage from 'containers/SwipePage'
 import Projects from 'containers/Projects'
 import Login from 'containers/Login'
 import CategoriesContainer from '../containers/Categories'
 import SubCategoriesContainer from '../containers/SubCategories'
+import NewsContainer from '../containers/News'
 
 function asyncComponentCreator (url) {
 	return asyncComponent({
@@ -49,17 +49,11 @@ function asyncComponentCreator (url) {
 
 function routingFnCreator (useFor) {
 	// const AsyncNotFound = asyncComponentCreator('NotFound')
-	// Dashboard and Links included in build
+	// Login and Links included in build
 	// NotFound(404) is lazy
 	const routes: any[] = [
 		{
 			path: '/',
-			exact: true,
-			component: Dashboard,
-			name: 'Dashboard'
-		},
-		{
-			path: '/categories',
 			exact: true,
 			component: CategoriesContainer,
 			name: 'Categories'
@@ -87,6 +81,18 @@ function routingFnCreator (useFor) {
 			exact: true,
 			component: SwipePage,
 			name: 'SwipePage'
+		},
+		{
+			path: '/news',
+			exact: true,
+			component: NewsContainer,
+			name: 'NewsContainer'
+		},
+		{
+			path: '/login',
+			exact: true,
+			component: Login,
+			name: 'Login'
 		},
 		{
 			component: asyncComponentCreator('NotFound'),

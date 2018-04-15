@@ -4,7 +4,7 @@ import { Button, Checkbox, Form } from 'semantic-ui-react'
 import {Helmet} from 'react-helmet'
 import {FormattedMessage} from 'react-intl'
 
-const Dashboard = () => {
+const Login = () => {
 	return (
 		<Form>
 			<Form.Field>
@@ -20,4 +20,4 @@ const Dashboard = () => {
 	)
 }
 
-export default Dashboard
+export default Login
