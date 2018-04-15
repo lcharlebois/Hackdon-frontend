@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import { Button, Card, Image, Grid, Icon } from 'semantic-ui-react'
+import { Button, Grid, Icon } from 'semantic-ui-react'
+import Fetch from 'react-fetch-component'
 import OData from 'react-odata'
 import Categories from '../../components/Categories'
 const baseUrl = 'http://a654mdkhmg6h-wua6.humbledonations.com/Categories'
@@ -24,7 +25,7 @@ export default class CategoriesContainer extends Component {
 						<Grid.Column />
 						<Grid.Column>
 							<Button icon labelPosition='right'>
-						Next
+								Next
 								<Icon name='right arrow' />
 							</Button>
 						</Grid.Column>
