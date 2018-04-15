@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Button, Card, Image, Grid } from 'semantic-ui-react'
+import { Button, Card, Image, Grid, Icon } from 'semantic-ui-react'
 import Fetch from 'react-fetch-component'
 import OData from 'react-odata'
 import Categories from '../../components/Categories'
