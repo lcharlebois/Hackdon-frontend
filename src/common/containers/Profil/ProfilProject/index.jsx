@@ -2,6 +2,7 @@
 import React from 'react'
 import { List, Grid, Image, Input } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
+import Cookies from 'js-cookie'
 
 export default class ProfilProject extends React.Component {
 	render () {
@@ -21,7 +22,8 @@ export default class ProfilProject extends React.Component {
 						label={{ basic: true, content: '%' }}
 						labelPosition='right'
 						type='number'
-						defaultValue={this.props.percentage}>
+						defaultValue={this.props.percentage}
+						onChange={this.onChange}>
 					</ Input>
 				</Grid.Column>
 			</Grid.Row>
@@ -30,6 +32,7 @@ export default class ProfilProject extends React.Component {
 }
 
 ProfilProject.propTypes = {
+	id: PropTypes.number,
 	link: PropTypes.string,
 	name: PropTypes.string,
 	desc: PropTypes.string,

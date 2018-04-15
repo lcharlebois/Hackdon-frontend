@@ -4,14 +4,17 @@ import Helmet from 'react-helmet'
 import Fetch from 'react-fetch-component'
 import OData from 'react-odata'
 import {NavLink} from 'react-router-dom'
-import cookies from 'react-cookie'
+import Cookies from 'js-cookie'
 const baseUrl = 'http://a654mdkhmg6h-wua6.humbledonations.com/Subscribe'
 
 export default class Subscribe extends Component {
 	constructor (props) {
 		super(props)
+
+		var credit = Cookies.get('credit') | 0
+
 		this.state = {
-			value: 0
+			value: credit
 		}
 	}
 
@@ -20,7 +23,7 @@ export default class Subscribe extends Component {
 	}
 
 	onSave = () => {
-		cookies.set('credit', this.state.value, { path: '/' })
+		Cookies.set('credit', this.state.value, {expires: 365})
 	}
 
 	render () {
@@ -44,7 +47,7 @@ export default class Subscribe extends Component {
 								label='1$'
 								name='checkboxRadioGroup'
 								value='1'
-								checked={this.state.value === '1'}
+								checked={this.state.value.toString() === '1'}
 								onChange={this.handleChange}
 							/>
 						</Form.Field>
@@ -54,7 +57,7 @@ export default class Subscribe extends Component {
 								label='2$'
 								name='radioGroup'
 								value='2'
-								checked={this.state.value === '2'}
+								checked={this.state.value.toString() === '2'}
 								onChange={this.handleChange}
 							/>
 						</Form.Field>
@@ -64,7 +67,7 @@ export default class Subscribe extends Component {
 								label='3$'
 								name='radioGroup'
 								value='3'
-								checked={this.state.value === '3'}
+								checked={this.state.value.toString() === '3'}
 								onChange={this.handleChange}
 							/>
 						</Form.Field>
@@ -74,7 +77,7 @@ export default class Subscribe extends Component {
 								label='5$'
 								name='radioGroup'
 								value='5'
-								checked={this.state.value === '5'}
+								checked={this.state.value.toString() === '5'}
 								onChange={this.handleChange}
 							/>
 						</Form.Field>

@@ -7,8 +7,9 @@ import { Grid, Button, Header, Image, Icon, Divider } from 'semantic-ui-react'
 import ProfilProject from './ProfilProject'
 import { NavLink } from 'react-router-dom'
 import _ from 'lodash'
+import Cookies from 'js-cookie'
 
-class Profil extends React.Component {
+export default class Profil extends React.Component {
 	render () {
 		return (
 			<div>
@@ -20,7 +21,7 @@ class Profil extends React.Component {
 					<Header.Content>
 						{user.name}
 						<Header.Subheader>
-							Vous donnez {user.credits}$ par mois
+							Vous donnez {Cookies.get('credit') | 0}$ par mois
 						</Header.Subheader>
 					</Header.Content>
 					<Button to='/subscribe' floated='right' as={NavLink} color='orange'>Modifier votre don mensuel</Button>
@@ -47,9 +48,13 @@ class Profil extends React.Component {
 	}
 }
 
-export default withCookies(Profil)
+const user = {
+	name: 'Jean don pah',
+	photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1gJrTqXMz_DO0hDOyo2cMMJ76hmIfrTMA5mCalphghLhxkTj',
+	credits: 2
+}
 
-const projects = [
+var projects = [
 	{
 		id: 1,
 		name: 'Fondation du CHUS - Cour en tête',
