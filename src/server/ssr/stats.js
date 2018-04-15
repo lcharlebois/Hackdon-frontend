@@ -51,10 +51,10 @@ export default async function () {
 		process.env.NODE_ENV === 'development'
 			? {
 				vendor: {
-					js: 'http://localhost:3000/vendor.js'
+					js: 'http://localhost:5000/vendor.js'
 				},
 				polyfills: {
-					js: 'http://localhost:3000/polyfills.js'
+					js: 'http://localhost:5000/polyfills.js'
 				}
 			}
 			: {}

@@ -9,6 +9,7 @@ import {GET_LINKS} from 'actions/links'
 import LinkItem from './components/LinkItem'
 import {getEntitiesLinksState, isLoaded} from 'selectors'
 import _ from 'lodash'
+import {NavLink} from 'react-router-dom'
 
 type Props = {
 	links: Object,
@@ -85,7 +86,8 @@ class Links extends Component<Props> {
 							})}
 						</Grid>
 						<br/>
-						<Button positive floated='right' as='a' href='/swipes'>Ajouter</Button>
+						<Button positive floated='right' as={NavLink} to='/swipes'>Ajouter</Button>
+						<Button primary floated='right' as='a'>Modifier</Button>
 					</div>
 				)}
 			</div>
