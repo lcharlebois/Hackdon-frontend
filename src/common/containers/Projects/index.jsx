@@ -26,7 +26,7 @@ export default class Projects extends React.Component {
 		return (
 			<div>
 				<Helmet>
-					<title>SwipePage</title>
+					<title>Projects</title>
 				</Helmet>
 				<Header as="h1">Quelques suggestions basés sur vos préférences</Header>
 				<Header as="h3">Choisissez des projets qui vous tienne à coeur</Header>

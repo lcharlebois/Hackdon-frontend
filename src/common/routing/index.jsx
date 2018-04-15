@@ -9,7 +9,7 @@ import Projects from 'containers/Projects'
 import Login from 'containers/Login'
 import CategoriesContainer from '../containers/Categories'
 import SubCategoriesContainer from '../containers/SubCategories'
-import NewsContainer from '../containers/News'
+import News from '../containers/News'
 
 function asyncComponentCreator (url) {
 	return asyncComponent({
@@ -85,8 +85,8 @@ function routingFnCreator (useFor) {
 		{
 			path: '/news',
 			exact: true,
-			component: NewsContainer,
-			name: 'NewsContainer'
+			component: News,
+			name: 'News'
 		},
 		{
 			path: '/login',
