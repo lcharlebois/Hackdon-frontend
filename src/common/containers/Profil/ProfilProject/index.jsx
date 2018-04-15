@@ -12,7 +12,7 @@ export default class ProfilProject extends React.Component {
 				</Grid.Column>
 				<Grid.Column width={10} verticalAlign='middle'>
 					<List.Content>
-						<List.Header as='a' href={this.props.link}>{this.props.name}</List.Header>
+						<List.Header as='a' href={this.props.link} target='blank'>{this.props.name}</List.Header>
 						<List.Description>{this.props.desc}</List.Description>
 					</List.Content>
 				</Grid.Column>

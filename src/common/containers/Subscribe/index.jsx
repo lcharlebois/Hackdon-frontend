@@ -3,6 +3,7 @@ import { Form, Header, Divider, Checkbox, Button, Icon } from 'semantic-ui-react
 import Helmet from 'react-helmet'
 import Fetch from 'react-fetch-component'
 import OData from 'react-odata'
+import {NavLink} from 'react-router-dom'
 const baseUrl = 'http://a654mdkhmg6h-wua6.humbledonations.com/Subscribe'
 
 export default class Subscribe extends Component {
@@ -74,7 +75,7 @@ export default class Subscribe extends Component {
 				</Form>
 				<br />
 				<br />
-				<Button href='http://localhost:5000/user' icon labelPosition='left' floated='right' color='orange' onClick={this.onSave}>
+				<Button to='/user' as={NavLink} icon labelPosition='left' floated='right' color='orange' onClick={this.onSave}>
 					<Icon name='credit card' />
 					Save
 				</Button>
