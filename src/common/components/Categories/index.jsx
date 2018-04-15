@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 
 export default class Categories extends Component {
 	static propTypes = {
-		categories: PropTypes.array
+		categories: PropTypes.array,
+		show: PropTypes.bool
 	}
 
 	constructor (props) {
@@ -31,6 +32,9 @@ export default class Categories extends Component {
 	}
 
 	render () {
+		if (this.props.show === false) {
+			return null
+		}
 		return (
 			<div>
 				<Card.Group>

@@ -18,13 +18,7 @@ class SidebarComponent extends Component<Props> {
 			{
 				path: '/',
 				exact: true,
-				name: 'Categories',
-				icon: 'bookmark'
-			},
-			{
-				path: '/subcategories',
-				exact: true,
-				name: 'SubCategories',
+				name: 'Préférences',
 				icon: 'bookmark'
 			},
 			{

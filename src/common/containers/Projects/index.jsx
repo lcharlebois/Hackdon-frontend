@@ -3,8 +3,13 @@ import ProjectCard from './ProjectCard'
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Grid, Header, Icon, Divider, Transition } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 export default class Projects extends React.Component {
+	static propTypes = {
+		show: PropTypes.bool
+	}
+
 	constructor (props) {
 		super(props)
 		this.state = {
@@ -20,6 +25,9 @@ export default class Projects extends React.Component {
 	render () {
 		const { upVisible, downVisible } = this.state
 
+		if (this.props.show === false) {
+			return null
+		}
 		return (
 			<div>
 				<Helmet>

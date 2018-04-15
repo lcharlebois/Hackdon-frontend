@@ -6,9 +6,7 @@ import {Loader, Dimmer, Header, Icon} from 'semantic-ui-react'
 import _ from 'lodash'
 import Profil from 'containers/Profil'
 import Projects from 'containers/Projects'
-import Login from 'containers/Login'
-import CategoriesContainer from '../containers/Categories'
-import SubCategoriesContainer from '../containers/SubCategories'
+import PreferencesContainer from '../containers/Preferences'
 import Subscribe from '../containers/Subscribe'
 import News from '../containers/News'
 
@@ -56,26 +54,8 @@ function routingFnCreator (useFor) {
 		{
 			path: '/',
 			exact: true,
-			component: CategoriesContainer,
-			name: 'Categories'
-		},
-		{
-			path: '/subcategories',
-			exact: true,
-			component: SubCategoriesContainer,
-			name: 'SubCategories'
-		},
-		{
-			path: '/projects',
-			exact: true,
-			component: Projects,
-			name: 'Projects'
-		},
-		{
-			path: '/login',
-			exact: true,
-			component: Login,
-			icon: 'bookmark'
+			component: PreferencesContainer,
+			name: 'Préférences'
 		},
 		{
 			path: '/user',
@@ -88,12 +68,6 @@ function routingFnCreator (useFor) {
 			exact: true,
 			component: News,
 			name: 'News'
-		},
-		{
-			path: '/login',
-			exact: true,
-			component: Login,
-			name: 'Login'
 		},
 		{
 			path: '/subscribe',
