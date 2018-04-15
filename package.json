@@ -141,7 +141,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack_config/client/webpack.prod.babel.js",
-    "start": "cross-env NODE_ENV=development babel-node ./webpack_config/devServer.js",
+    "start": "cross-env NODE_ENV=production babel-node ./webpack_config/devServer.js",
     "dev": "cross-env NODE_ENV=development babel-node ./webpack_config/devServer.js",
     "test": "echo Done"
   },
