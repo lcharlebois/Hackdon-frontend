@@ -98,6 +98,22 @@ const projects = [
 		url: 'http://www.fondationchus.org/realisations/projets-majeurs/',
 		contributorCount: 25
 	}, {
+		id: 4,
+		logo: 'https://www.jedonneenligne.org/fondationchus/view.php?file_id=logo_Logoofficiel.jpg',
+		name: 'Aidez-Nous!!!',
+		image: 'http://cdn.skim.gs/images/c_fill,dpr_1.0,f_auto,fl_lossy,h_391,q_auto,w_695/i5lbcuht7ndv9fyjrsfh/giving-birth-baby-friendly-hospital',
+		description: 'Renouvellement des salles d’angiographie et de radiologie interventionnelle. Renouvellement des salles de cardiologie interventionnelle. Réaménagement majeur du Pavillon Émile-Noël, consacré à la santé mentale',
+		url: 'http://www.fondationchus.org/realisations/projets-majeurs/',
+		contributorCount: 0
+	}, {
+		id: 5,
+		logo: 'https://www.jedonneenligne.org/fondationchus/view.php?file_id=logo_Logoofficiel.jpg',
+		name: 'Faites Une différence!!!',
+		image: 'http://kashmirinfocus.com/wp-content/uploads/2015/06/7-GMC-hospitals-and-1-CT-scan-lone-MRI-machine.jpg',
+		description: 'Coeur en tête, c’est la bataille de Nathalie  Buisson, cette formidable danseuse des Grands Ballets Canadiens chez qui on diagnostiquait  en  2004  une  tumeur cérébrale maligne incurable. Sur sa route, elle a rencontré Dr David Fortin, neuro-chirurgien et neuro-oncologue au Centre hospitalier universitaire de Sherbrooke, qui lui prodigua un traitement précurseur permettant  de  combattre  les  tumeurs cérébrales.',
+		url: 'http://www.fondationchus.org/realisations/projets-majeurs/',
+		contributorCount: 0
+	}, {
 		id: 1,
 		name: 'Coeur en tête',
 		logo: 'https://www.jedonneenligne.org/fondationchus/view.php?file_id=logo_Logoofficiel.jpg',
