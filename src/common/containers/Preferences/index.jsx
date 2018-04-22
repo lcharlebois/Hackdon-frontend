@@ -56,14 +56,14 @@ export default class PreferencesContainer extends Component {
 					</Step>
 
 					<Step active={this.state.showedStepId === 2}>
-						<Icon name='configure' />
+						<Icon name='cogs' />
 						<Step.Content>
 							<Step.Title>{"Précisez vos champs d'intérêts"}</Step.Title>
 						</Step.Content>
 					</Step>
 
 					<Step active={this.state.showedStepId === 3}>
-						<Icon name='signup' />
+						<Icon name='favorite' />
 						<Step.Content>
 							<Step.Title>Vos favoris</Step.Title>
 						</Step.Content>
@@ -84,14 +84,14 @@ export default class PreferencesContainer extends Component {
 					<Login show={this.state.showedStepId === 4} />
 				</Segment>
 				<Grid>
-					<GridRow columns={3}>
-						<Grid.Column>
-							<Icon onClick={this.onClickBack} disabled={this.state.showedStepId <= 1} name='arrow outline left' size='massive' color='orange'/>
+					<GridRow columns={7}>
+						<Grid.Column floated='left' width='3'>
+							<Icon floated='left' onClick={this.onClickBack} disabled={this.state.showedStepId <= 1} name='arrow outline left' size='massive' color='orange'/>
 						</Grid.Column>
-						<Grid.Column>
+						<Grid.Column width='1'>
 						</Grid.Column>
-						<Grid.Column>
-							<Icon onClick={this.onClickNext} disabled={this.state.showedStepId >= 4} name='arrow outline right' size='massive' color='orange'/>
+						<Grid.Column floated='right' width='3'>
+							<Icon floated='right' onClick={this.onClickNext} disabled={this.state.showedStepId >= 4} name='arrow outline right' size='massive' color='orange'/>
 						</Grid.Column>
 					</GridRow>
 				</Grid>

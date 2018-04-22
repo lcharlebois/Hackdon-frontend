@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/client/index.jsx",
   "description": "Humble Donations",
-  "apiUrl": "http://localhost:54883/api",
+  "apiUrl": "http://localhost:51883/api",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",

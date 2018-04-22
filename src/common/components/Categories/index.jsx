@@ -10,21 +10,9 @@ export default class Categories extends Component {
 
 	constructor (props) {
 		super(props)
-		this.state = {}
-	}
-
-	handleClick (id) {
-		let oldCategories = this.state.categories
-		oldCategories.forEach((category) => {
-			if (category.id === id) {
-				category.isActive = !category.isActive
-			}
-		})
-
-		this.setState = {
-			categories: oldCategories
+		this.state = {
+			selectedArray: []
 		}
-		this.forceUpdate()
 	}
 
 	componentWillMount () {
@@ -40,8 +28,9 @@ export default class Categories extends Component {
 				<Card.Group>
 					{
 						this.props.categories.map((category) => {
+							var selected = false
 							return (
-								<Card key={category.id}>
+								<Card key={category.id} centered style={{backGroundColor: this.state.selectedArray.includes(category.id) ? 'lightgray' : 'white'}}>
 									<Card.Content>
 										<Image floated='right' size='mini' src={category.iconUrl} />
 										<Card.Header>
@@ -54,11 +43,11 @@ export default class Categories extends Component {
 									<Card.Content extra>
 										<div className='ui two buttons'>
 											<Button
-												style={{backgroundColor: 'orange'}}
+												color='orange'
 												toggle
 												active={category.isActive}
-												onClick={() => this.handleClick(category.id)}>
-												{category.isActive ? 'Selected' : 'Select'}
+												onClick={() => this.state.selectedArray.push(category.id)}>
+												Select
 											</Button>
 										</div>
 									</Card.Content>

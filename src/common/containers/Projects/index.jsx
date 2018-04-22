@@ -102,7 +102,7 @@ const projects = [
 		name: 'Coeur en tête',
 		logo: 'https://www.jedonneenligne.org/fondationchus/view.php?file_id=logo_Logoofficiel.jpg',
 		image: 'http://www.fondationchus.org/clients/Fondation/activites/coeur_en_tete/coeur_en_tete_logo.jpg',
-		description: 'Coeur en tête, c’est la bataille de Nathalie  Buisson, cette formidable danseuse des Grands Ballets Canadiens chez qui on diagnostiquait  en  2004  une  tumeur cérébrale maligne incurable. Sur sa route, elle a rencontré Dr David Fortin, neuro-chirurgien et neuro-oncologue au Centre hospitalier universitaire de Sherbrooke, qui lui prodigua un traitement précurseur permettant  de  combattre  les  tumeurs cérébrales.',
+		description: 'Coeur en tête, c’est la bataille de Nathalie  Buisson, cette formidable danseuse des Grands Ballets Canadiens chez qui on diagnostiquait  en  2004  une  tumeur cérébrale maligne incurable.',
 		url: 'http://www.fondationchus.org/activites-de-financement/coeur-en-tete/',
 		contributorCount: 30
 	}, {
@@ -110,7 +110,7 @@ const projects = [
 		name: 'L’Arctique ',
 		logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdMRL_O_R1Vrwooq0CElRMzuQxiJQXBHirRZFeDsSUThrfSDv',
 		image: 'http://www.greenpeace.org/canada/Global/canada/image/2012/06/GP0506.jpg',
-		description: 'L’Arctique est en danger. À cause des changements climatiques, la fonte des glaces s’accélère et ouvre le chemin aux compagnies pétrolières et aux flottes de pêche assoiffées de profits qui voient dans cette catastrophe une opportunité d’affaires. La survie et la culture des peuples autochtones et de tous les habitants du Nord, ainsi que celle de la faune, sont inutilement mises en péril au nom d’une idée erronée de progrès et de croissance. Étant l’un de plus grands pays arctiques au monde, le Canada a la responsabilité de se distancier de tout projet ravageur de la nature, et de promouvoir un développement vraiment durable dans le Nord. La campagne Arctique de Greenpeace est un effort mondial pour interdire toute activité destructive dans l’océan Arctique. Ensemble, #SauvonslArctique !',
+		description: 'L’Arctique est en danger. La survie et la culture des peuples autochtones et de tous les habitants du Nord, ainsi que celle de la faune, sont inutilement mises en péril au nom d’une idée erronée de progrès et de croissance. #SauvonslArctique !',
 		url: 'http://www.greenpeace.org/canada/fr/campagnes/',
 		contributorCount: 15
 	}, {

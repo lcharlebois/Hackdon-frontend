@@ -58,6 +58,12 @@ function routingFnCreator (useFor) {
 			name: 'Préférences'
 		},
 		{
+			path: '/news',
+			exact: true,
+			component: News,
+			name: 'Nouvelles'
+		},
+		{
 			path: '/projects',
 			exact: true,
 			component: Projects,
@@ -69,12 +75,7 @@ function routingFnCreator (useFor) {
 			component: Profil,
 			name: 'Profil d\'utilisateur'
 		},
-		{
-			path: '/news',
-			exact: true,
-			component: News,
-			name: 'Nouvelles'
-		},
+
 		{
 			path: '/subscribe',
 			exact: true,
